@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
+<!--<p>-->
+<!--  <string>Name:</string>-->
+<%#= @room.name %>
+<!--</p>-->
 
-<p>
-  <string>Name:</string>
-  <%= @room.name %>
-</p>
+<%= form_with(model: [@message.room, @message]) do |form| %>
+  <div class="field">
+    <%= form.text_field :content %>
+    <%= form.submit "Send" %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', @message.room %>
