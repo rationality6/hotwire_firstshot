@@ -11,6 +11,9 @@
 
   <%= turbo_include_tags %>
   <%= stimulus_include_tags %>
+    <%= yield :head %>
+    <%= turbo_include_tags %>
+    <%= stimulus_include_tags %>
 </head>
 
 <body>
