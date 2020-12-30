@@ -13,17 +13,18 @@
   <tbody>
   <% @rooms.each do |room| %>
     <tr>
-      <td><%= room.name %></td>
+      <td><%= room.id %> | <%= room.name %></td>
+
       <td><%= link_to 'Show', room %></td>
+
       <td><%= link_to 'Edit', edit_room_path(room) %></td>
-      <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      <td><%= link_to 'Destroy', room_path(room.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
-<br>
-<%= turbo_frame_tag "new_room" do %>
-  <%= link_to 'New Room', new_room_path %>
-<% end %>
 
+<br>
+<%= turbo_frame_tag "new_room", src: new_room_path, target: "_top" %>
