@@ -1,0 +1,6 @@
+<h1>새 메세지</h1>
+
+<%= form_with(model: [@blog_messages.blog, @blog_messages]) do |form| %>
+  <%= form.text_field :body %>
+  <%= form.submit "Send" %>
+<% end %>
